@@ -374,6 +374,8 @@ void VirtualboxTouchScreenHandler::reportTouch(Qt::TouchPointState state)
 {
     QList<QWindowSystemInterface::TouchPoint> touchpoints;
 
+    qDebug() << "vboxtouch event: " << m_x << ", " << m_y << " - " << state << " " << m_button;
+
     if (m_indicator->isActive()) {
         // Emulate multitouch: pinch in/out gesture
         const QPointF p1 = screenPointToDevicePoint(m_indicator->p1(), m_screenGeometry);
