@@ -192,7 +192,7 @@ QWindowSystemInterface::TouchPoint createTouchPoint(const QPointF &p, Qt::TouchP
     tp.area = QRectF(0, 0, 4, 4);
 
     tp.area.moveCenter(devicePointToScreenPoint(p, screen));
-    tp.rawPositions.append(p);
+    tp.rawPositions.append(devicePointToScreenPoint(p, screen));
 
     return tp;
 }
